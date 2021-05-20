@@ -1,0 +1,20 @@
+
+- ver backups {fuero}
+- ingresadas ver total y listado(actualmente solo total)
+
+pedidos:
+Cámara Civil Concepción, sentencias vencidas al 31/8 (fondo e interlocutorias)
+
+Cámara Civil Capital, sentencias vencidas al 31/8 y escritos sin decretar con más de 2 días (al 31/8)
+
+sentencias pendientes
+
+
+
+- change 00000000 
+
+- ver sentencias pendientes en el backup vero
+
+- add audiencias query
+
+- add passwords

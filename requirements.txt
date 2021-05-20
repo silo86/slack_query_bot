@@ -1,0 +1,9 @@
+flask
+pandas
+psycopg2
+slack
+slackclient
+slackeventsapi
+SQLAlchemy
+GitPython
+sandesh
