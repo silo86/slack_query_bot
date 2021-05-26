@@ -37,9 +37,12 @@ class execute:
     def _get_query(self,**kwargs):
         fuero = kwargs['fuero']
         _query = kwargs['_query']
+        #%% text formating
         _query = _query.replace('&gt;','>')
         _query = _query.replace('&lt;','<')
         _query = _query.strip()
+        _query = _query.replace(u'\xa0', u' ')
+        
 
         #ddedbs
         hostname = os.getenv("ddedbs_ip")

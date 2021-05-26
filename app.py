@@ -326,6 +326,7 @@ def message(payload):
             _query = text[query_begin_character + 1:query_end_character]
             lista = []
             lista = text[query_end_character:].split(' ')
+            print(lista)
             for i,s in enumerate(lista):
                 if "sae" in s or "oga" in s:
                     index = i
