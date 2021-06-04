@@ -1,3 +1,4 @@
+/* Ingreso a juzgados listado */
 select * from (
 	select distinct on (procid) * from(
 		select 
@@ -19,6 +20,7 @@ select * from (
 		and feca <= '{1}'
 		and acum = false
 		and anul = false
+		and j.dscr ilike '%juzg%'
 		and feca is not null
-		order by r.procid,r.radiid) as expedientes_radicados_desde_ME
-			) as nested_query  order by "juzgado de destino"
+		order by r.procid,r.feca) as expedientes_radicados_desde_ME
+			) as ingreso_a_juzgados  order by "juzgado de destino"
