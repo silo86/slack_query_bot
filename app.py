@@ -215,6 +215,7 @@ def message(payload):
 
         def get_parameters(text):
             ''' devuelve la lista de parametros de acuerdo al texto ingresado'''
+            print('llega a get_parameters')
             lista = []
             lista = text.split(' ')
             for i,s in enumerate(lista):
@@ -265,8 +266,9 @@ def message(payload):
             names.append(name)
         # obtiene los parametros y ejecuta la consulta
         textlist = text.split(' ')
+        print(textlist)
         for name in names:
-            if name == textlist[0].lower():
+            if name == textlist[0]:
                 keyword = name
                 fuero,fechadesde,fechahasta = get_parameters(text)
                 channel_id = event.get("channel")
