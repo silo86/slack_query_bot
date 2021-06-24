@@ -15,6 +15,6 @@ left join public."JUZG" as j on s.juzgid = j.juzgid
 left join public."PROC" as p on s.procid = p.procid
 where t.dscr ilike 'ingreso%sal%'
 and j.dscr not ilike '%juzg%'
+order by s.procid, s.saliid) as q
 and fsal >= '{0}'
 and fsal <= '{1}'
-order by s.procid, s.saliid) as q

@@ -24,11 +24,13 @@ select * from (
 		left join public."JUZG" as i on i.juzgid = r.juorid
 		left join public."JUZG" as k on k.juzgid = p.juzgid
 		where /*r.juorid in (/* id de unidad mesa de entrada */select juzgid from public."JUZG" where dscr ilike '%mesa%entra%' and acti = true and csae = true)
-		and*/ feca >= '{0}'
-		and feca <= '{1}'
-		and acum = false
+		and*/ 
+	    acum = false
 		and anul = false
 		and j.dscr ilike '%corte%'
 		and feca is not null
 		order by r.procid,r.feca) as expedientes_por_primera_radicacion
-			) as ingreso_a_corte  order by juzgado_de_destino
+			) as ingreso_a_corte
+		where fecha_de_cargo >= '{0}'
+		and fecha_de_cargo <= '{1}'
+			order by juzgado_de_destino
