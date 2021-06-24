@@ -79,7 +79,7 @@ class queries:
             con = psycopg2.connect(host=hostname, user=username, password=password, dbname='saeciv')
             lista_db = '''SELECT datname FROM pg_database WHERE datistemplate = false '''
             bases = pd.read_sql(lista_db,con)
-            dbs = [base for base in bases.datname if (base.startswith('sae') or base.startswith('oga')) and not base.startswith('saemed') and not base.startswith('saeoga') and base not in ('saejes','saepjt','saeori')]
+            dbs = [base for base in bases.datname if (base.startswith('sae') or base.startswith('oga')) and not base.startswith('saemed') and base not in ('saejes','saepjt')]
         dfs = pd.DataFrame()
 
 
@@ -89,7 +89,7 @@ class queries:
                 print(f'Iniciando lectura de base de datos {fila}', end='\n')
                 msg = ''
                 msg = f'Iniciando lectura de base de datos {fila}'
-                sandesh.send(msg, webhook = "https://hooks.slack.com/services/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")
+                #sandesh.send(msg, webhook = "https://hooks.slack.com/services/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")
                 print(f'\n datos conexion: {hostname} {username} {password} {fila}')
                 con_b = psycopg2.connect(host=hostname, user=username, password=password, dbname = fila)
                 query_file = open(sql_path, 'r', encoding="latin-1")

@@ -40,7 +40,7 @@ class checkDB:
         bases = pd.read_sql(lista_db,con)
 
 
-        dbs = [base for base in bases.datname if base.startswith('sae') and not base.startswith('saemed') and not base.startswith('saeoga') and base not in ('saejes','saepjt','saeori','saepencam','saesup')]
+        dbs = [base for base in bases.datname if base.startswith('sae') and not base.startswith('saemed')  and base not in ('saejes','saepjt','saepencam','saesup')]
 
         dfs = pd.DataFrame()
         query = ''' select current_database() as base,max(febo) as febo,max(fepf) as fepf, max(fefi) as fefi from public."HIST" '''
@@ -48,7 +48,7 @@ class checkDB:
             print(f'Iniciando lectura de base de datos {fila}', end='\n')
             msg = ''
             msg = f'Iniciando lectura de base de datos {fila}'
-            sandesh.send(msg, webhook = "https://hooks.slack.com/services/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")
+            #sandesh.send(msg, webhook = "https://hooks.slack.com/services/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")
             con_b = psycopg2.connect(host=hostname, user=username, password=password, dbname = fila)
             df = pd.read_sql(query,con_b)
             dfs = dfs.append(df)
