@@ -83,7 +83,7 @@ class execute:
                 print(f'Iniciando lectura de base de datos {fila}', end='\n')
                 msg = ''
                 msg = f'Iniciando lectura de base de datos {fila}'
-                #sandesh.send(msg, webhook = "https://hooks.slack.com/services/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")
+                sandesh.send(msg, webhook = "https://hooks.slack.com/services/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")
                 con_b = psycopg2.connect(host=hostname, user=username, password=password, dbname = fila)
                 df = pd.read_sql(_query,con_b)
                 dfs = dfs.append(df)
